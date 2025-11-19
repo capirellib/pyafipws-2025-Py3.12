@@ -48,21 +48,18 @@ parent_dir = os.getcwd()
 long_desc = open(os.path.join(parent_dir, "README.md")).read()
 
 setup(
-    name="PyAfipWs",
+    name="pyafipws",  # Cambio a minúsculas para que Odoo lo detecte
     version=__version__,
     description=desc,
     long_description=long_desc,
     long_description_content_type="text/markdown",
     author="Mariano Reingart",
     author_email="reingart@gmail.com",
-    url="https://github.com/reingart/pyafipws",
+    url="https://github.com/capirellib/pyafipws-2025-Py3.12",
     license="LGPL-3.0-or-later",
     install_requires=[
-        "httplib2==0.9.2;python_version <= '2.7'",
         "httplib2>=0.20.4;python_version > '3'",
-        "pysimplesoap==1.08.14;python_version <= '2.7'",
         "pysimplesoap==1.8.22;python_version > '3'",
-        "cryptography==3.3.2;python_version <= '2.7'",
         "cryptography>=3.4.7;python_version > '3'",
         "fpdf>=1.7.2",
         "dbf>=0.88.019",
@@ -70,7 +67,7 @@ setup(
         "tabulate>=0.8.5",
         "certifi>=2020.4.5.1",
         "qrcode>=6.1",
-        "future>=0.18.2",
+        # "future>=0.18.2",  # Removido - incompatible con Python 3.12+
     ],
     extras_require={
         "opt": ["pywin32==304;sys_platform == 'win32' and python_version > '3'"]
